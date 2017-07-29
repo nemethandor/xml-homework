@@ -18,4 +18,13 @@ A feladat ugyanaz mint az első példában, de itt Stax-ot használjatok a feldo
 
 # 4. Feladat - XSD készítés
 
-* Írjatok xsd-t az első példa xml-jére.
+Írjatok xsd-t az első példa xml-jére.
+
+
+#### Hasznos linkek:
+
+[DOM-os beolvasás](https://www.tutorialspoint.com/java_xml/java_dom_parse_document.htm)
+
+[Stax-os beolvasás](https://www.tutorialspoint.com/java_xml/java_stax_parse_document.htm)
+
+[XSD készítés](https://www.tutorialspoint.com/xsd/xsd_overview.htm)
