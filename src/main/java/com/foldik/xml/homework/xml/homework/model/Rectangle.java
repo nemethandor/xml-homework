@@ -5,6 +5,18 @@ public final class Rectangle {
     private final double width;
     private final double height;
     private final double x;
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "width=" + width +
+                ", height=" + height +
+                ", x=" + x +
+                ", y=" + y +
+                ", color=" + color +
+                '}';
+    }
+
     private final double y;
     private final Color color;
 
