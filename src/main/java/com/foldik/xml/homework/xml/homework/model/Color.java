@@ -8,6 +8,13 @@ public final class Color {
         this.hex = hex;
     }
 
+    @Override
+    public String toString() {
+        return "Color{" +
+                "hex='" + hex + '\'' +
+                '}';
+    }
+
     public String getHex() {
         return hex;
     }

@@ -5,6 +5,9 @@ public final class Rectangle {
     private final double width;
     private final double height;
     private final double x;
+    private final double y;
+    private final Color color;
+
 
     @Override
     public String toString() {
@@ -16,9 +19,6 @@ public final class Rectangle {
                 ", color=" + color +
                 '}';
     }
-
-    private final double y;
-    private final Color color;
 
     public Rectangle(double width, double height, double x, double y, Color color) {
         this.width = width;

@@ -13,19 +13,19 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 public class DomReader {
 
-    private static final String XML_ROOT_FOLDER="/";
+    private static final String XML_ROOT_FOLDER = "/";
 
-    public void getListOfElementsByTag()throws Exception{
+    public void getListOfElementsByTag() throws Exception {
         Document doc = getDocument("rectangle-example.xml");
 
-        NodeList nodeList=doc.getElementsByTagName("Rectangle");
+        NodeList nodeList = doc.getElementsByTagName("Rectangle");
 
-        for (int i=0;i<nodeList.getLength();i++){
-            Element rectangleTag= (Element) doc.getElementsByTagName("Rectangle").item(i);
+        for (int i = 0; i < nodeList.getLength(); i++) {
+            Element rectangleTag = (Element) doc.getElementsByTagName("Rectangle").item(i);
 
             Color color = new Color(rectangleTag.getAttribute("Color"));
 
-            Rectangle rectangle= new Rectangle(
+            Rectangle rectangle = new Rectangle(
                     Double.parseDouble(rectangleTag.getAttribute("Width")),
                     Double.parseDouble(rectangleTag.getAttribute("Height")),
                     Double.parseDouble(rectangleTag.getAttribute("X")),
@@ -37,34 +37,34 @@ public class DomReader {
 
     }
 
-    public String calculateAVG(String tagName, String attribute){
-        Document doc=getDocument("rectangle-example.xml");
+    public String calculateAVG(String tagName, String attribute) {
+        Document doc = getDocument("rectangle-example.xml");
 
-        NodeList nodeList=doc.getElementsByTagName(tagName);
-        Double sum=0.0;
+        NodeList nodeList = doc.getElementsByTagName(tagName);
+        Double sum = 0.0;
 
-        for (int i=0;i<nodeList.getLength();i++){
+        for (int i = 0; i < nodeList.getLength(); i++) {
 
-            Element rectangleTag= (Element) doc.getElementsByTagName(tagName).item(i);
+            Element rectangleTag = (Element) doc.getElementsByTagName(tagName).item(i);
 
-            sum+=Double.parseDouble(rectangleTag.getAttribute(attribute));
+            sum += Double.parseDouble(rectangleTag.getAttribute(attribute));
 
         }
 
 //        double average=;
 
-        return "Average of " + attribute + ": "+Math.round(sum/nodeList.getLength()*100.0)/100.0;
+        return "Average of " + attribute + ": " + Math.round(sum / nodeList.getLength() * 100.0) / 100.0;
 
     }
 
-    private Document getDocument(String inputXML){
-        try{
+    private Document getDocument(String inputXML) {
+        try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = factory.newDocumentBuilder();
-            Document doc=documentBuilder.parse(getClass().getResourceAsStream(XML_ROOT_FOLDER+inputXML));
+            Document doc = documentBuilder.parse(getClass().getResourceAsStream(XML_ROOT_FOLDER + inputXML));
             doc.getDocumentElement().normalize();
             return doc;
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
